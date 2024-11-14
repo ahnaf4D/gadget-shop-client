@@ -9,7 +9,7 @@ import SlideImageThree from '../../assets/banner-images/image-3.jpg';
 
 const Banner = () => {
     return (
-        <div className="bg-gray-100 py-12 ">
+        <div className="bg-gray-100 py-12 z-50 ">
             <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12 px-6 justify-center">
                 <div className="text-center lg:text-left w-full lg:w-1/2 space-y-4">
                     <h1 className="text-5xl font-bold text-gray-800">Explore the Latest in Tech!</h1>

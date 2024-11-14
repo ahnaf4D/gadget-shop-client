@@ -1,9 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png'
+import useAuth from '../hooks/useAuth';
+import UserDropDown from './UserDropDown';
 const Navbar = () => {
+    const { user } = useAuth();
     return (
         <div>
-            <div className="navbar bg-base-600">
+            <div className="navbar bg-base-600 z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,9 +32,11 @@ const Navbar = () => {
                             <li><NavLink to='/contact-us'>Contact Us</NavLink></li>
                         </ul>
                     </div>
-                    <h2 className="btn btn-ghost text-2xl">
-                        <img src={logo} alt="" />
-                        Gadget Shop</h2>
+                    <Link to='/'>
+                        <h2 className="btn btn-ghost text-2xl">
+                            <img src={logo} alt="" />
+                            Gadget Shop</h2>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden  lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -41,7 +46,7 @@ const Navbar = () => {
                         <li><NavLink to='/contact-us'>Contact Us</NavLink></li>
                     </ul>
                 </div>
-                <div className="navbar-end">
+                {user ? (<div className='navbar-end'><UserDropDown></UserDropDown></div>) : (<div className="navbar-end">
                     <div className="flex gap-4 items-center">
                         <Link to='/create-account'>
                             <button className="btn btn-outline btn-success text-lg px-6 py-2 font-medium hover:bg-secondary hover:text-black transition-colors">
@@ -54,8 +59,7 @@ const Navbar = () => {
                             </button>
                         </Link>
                     </div>
-                </div>
-
+                </div>)}
             </div>
         </div >
     );

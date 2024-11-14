@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
 import app from "../firebase/firebase";
-import { GoogleAuthProvider } from "firebase/auth/web-extension";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -24,12 +24,25 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setLoading(false);
+            if (currentUser) {
+                axios.post(`${import.meta.env.VITE_SERVER_URL}/auth`, { email: currentUser.email })
+                    .then(data => {
+                        if (data.data) {
+                            localStorage.setItem('access-token', data?.data?.token);
+                            setLoading(false);
+                        }
+                    })
+            }
+            else {
+                localStorage.removeItem('access-token');
+                setLoading(false);
+            }
         })
+        // cleanup
         return () => {
             return unsubscribe();
-        }, []
-    },)
+        }
+    }, [])
     const authInfo = {
         createUser, loginUser, logOutUser, googleLogin, user, loading
     }
