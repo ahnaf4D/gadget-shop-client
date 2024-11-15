@@ -7,3 +7,4 @@ const useAuth = () => {
 };
 
 export default useAuth;
+// these hooks returns {createUser, loginUser, logOutUser, googleLogin, user, loading}

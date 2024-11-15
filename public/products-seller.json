@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "title": "iPhone 14 Pro",
+        "brand": "Apple",
+        "price": 999,
+        "stock": 20,
+        "category": "smartphones",
+        "image": "https://via.placeholder.com/150",
+        "description": "The latest iPhone with A16 Bionic chip and Dynamic Island."
+    },
+    {
+        "id": "2",
+        "title": "MacBook Pro 16\"",
+        "brand": "Apple",
+        "price": 2499,
+        "stock": 10,
+        "category": "laptops",
+        "image": "https://via.placeholder.com/150",
+        "description": "Powerful MacBook Pro with M2 Max chip, perfect for professionals."
+    },
+    {
+        "id": "3",
+        "title": "Galaxy S23 Ultra",
+        "brand": "Samsung",
+        "price": 1199,
+        "stock": 15,
+        "category": "smartphones",
+        "image": "https://via.placeholder.com/150",
+        "description": "High-end Android smartphone with a 200MP camera."
+    },
+    {
+        "id": "4",
+        "title": "Logitech MX Master 3",
+        "brand": "Logitech",
+        "price": 99,
+        "stock": 50,
+        "category": "accessories",
+        "image": "https://via.placeholder.com/150",
+        "description": "Ergonomic wireless mouse designed for productivity."
+    },
+    {
+        "id": "5",
+        "title": "PlayStation 5",
+        "brand": "Sony",
+        "price": 499,
+        "stock": 8,
+        "category": "gaming",
+        "image": "https://via.placeholder.com/150",
+        "description": "Next-gen gaming console with immersive graphics."
+    },
+    {
+        "id": "6",
+        "title": "Asus ROG Zephyrus G14",
+        "brand": "Asus",
+        "price": 1599,
+        "stock": 12,
+        "category": "laptops",
+        "image": "https://via.placeholder.com/150",
+        "description": "High-performance gaming laptop with AMD Ryzen processor."
+    },
+    {
+        "id": "7",
+        "title": "AirPods Pro",
+        "brand": "Apple",
+        "price": 249,
+        "stock": 30,
+        "category": "accessories",
+        "image": "https://via.placeholder.com/150",
+        "description": "Noise-cancelling wireless earbuds with spatial audio."
+    },
+    {
+        "id": "8",
+        "title": "Nintendo Switch OLED",
+        "brand": "Nintendo",
+        "price": 349,
+        "stock": 25,
+        "category": "gaming",
+        "image": "https://via.placeholder.com/150",
+        "description": "Hybrid gaming console with an OLED display for vibrant visuals."
+    }
+]

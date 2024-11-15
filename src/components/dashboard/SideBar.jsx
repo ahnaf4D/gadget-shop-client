@@ -13,10 +13,11 @@ import { IoMenu } from "react-icons/io5";
 import logo from '../../assets/logo.png';
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import useUserData from "../../hooks/useUserData";
 
 const SideBar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
-
+    const userData = useUserData();
     return (
         <div
             className={`transition-all px-2 py-2 duration-300 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white shadow-lg min-h-screen ${isCollapsed ? "w-20" : "w-64"
@@ -58,19 +59,21 @@ const SideBar = () => {
 
                     {/* Customer Links */}
                     <div className="divider my-2" />
-                    <NavItem to="/dashboard/orders" icon={<FaBox />} label="Orders" isCollapsed={isCollapsed} />
-                    <NavItem to="/dashboard/cart" icon={<FaShoppingCart />} label="Cart" isCollapsed={isCollapsed} />
+                    {/* <NavItem to="/dashboard/orders" icon={<FaBox />} label="Orders" isCollapsed={isCollapsed} />
+                    <NavItem to="/dashboard/cart" icon={<FaShoppingCart />} label="Cart" isCollapsed={isCollapsed} /> */}
 
                     {/* Seller Links */}
-                    <div className="divider my-2" />
-                    <NavItem to="/dashboard/products" icon={<FaStore />} label="My Products" isCollapsed={isCollapsed} />
-                    <NavItem to="/dashboard/sales" icon={<FaChartLine />} label="Sales" isCollapsed={isCollapsed} />
-                    <NavItem to="/dashboard/add-product" icon={<FaBox />} label="Add Product" isCollapsed={isCollapsed} />
+                    {userData?.role == 'seller' && <>
+                        <div className="divider my-2" />
+                        <NavItem to="/dashboard/add-products" icon={<FaBox />} label="Add Product" isCollapsed={isCollapsed} />
+                        <NavItem to="/dashboard/my-products" icon={<FaStore />} label="My Products" isCollapsed={isCollapsed} />
+                        <NavItem to="/dashboard/sales" icon={<FaChartLine />} label="Sales" isCollapsed={isCollapsed} />
+                    </>}
 
                     {/* Admin Links */}
-                    <div className="divider my-2" />
+                    {/* <div className="divider my-2" />
                     <NavItem to="/dashboard/users" icon={<FaUsers />} label="Manage Users" isCollapsed={isCollapsed} />
-                    <NavItem to="/dashboard/settings" icon={<FaCog />} label="Settings" isCollapsed={isCollapsed} />
+                    <NavItem to="/dashboard/settings" icon={<FaCog />} label="Settings" isCollapsed={isCollapsed} /> */}
 
                     {/* Profile Link */}
                     <div className="divider my-2" />
