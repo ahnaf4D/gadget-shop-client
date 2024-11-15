@@ -27,7 +27,7 @@ const UserDropDown = () => {
                     </div>
                 </div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <li><Link>Dashboard</Link></li>
+                    <li><Link to='/dashboard'>Dashboard</Link></li>
                     <button onClick={onSubmit} className="btn btn-primary btn-outline">Logout</button>
                 </ul>
             </div>

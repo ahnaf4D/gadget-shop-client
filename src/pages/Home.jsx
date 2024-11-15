@@ -31,6 +31,7 @@ const Home = () => {
 
 
             <Faq></Faq>
+
         </div>
     );
 };
